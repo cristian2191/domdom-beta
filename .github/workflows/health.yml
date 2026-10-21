@@ -1,0 +1,31 @@
+# THE HEALTH OF THE BETA SERVER (2026-10-21, SYSTEM_ARCHITECTURE.md task 1.2). Every 5 minutes GitHub asks the VPS whether
+# the profile service (/healthz: 200) and the game server (/play: 400 to a plain request, 502 when it is down) answer, with
+# three tries 20 s apart. When they do not, the run fails and GitHub sends an email to the owner of this repository
+# (Settings > Notifications > Actions: failed workflows). GitHub may start a scheduled run a few minutes late, and stops the
+# schedule of a public repository after 60 days without commits: a commit here starts it again.
+name: Server health
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: The profile service and the game server answer
+        run: |
+          base=https://209-227-229-226.sslip.io
+          for try in 1 2 3; do
+            h=$(curl -s -o /dev/null -m 15 -w '%{http_code}' "$base/healthz" || true)
+            p=$(curl -s -o /dev/null -m 15 -w '%{http_code}' "$base/play" || true)
+            echo "try $try: /healthz $h, /play $p"
+            if [ "$h" = "200" ] && [ "$p" = "400" ]; then echo "the beta server answers"; exit 0; fi
+            sleep 20
+          done
+          echo "::error::the beta server does not answer (/healthz $h, /play $p)"
+          exit 1
