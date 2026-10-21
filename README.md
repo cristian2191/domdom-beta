@@ -1,16 +1,11 @@
 # DomDom Dominion: closed beta
 
-Here you find only the test builds of **DomDom Dominion** for Android. The source code of the game is not in this
+The closed beta of **DomDom Dominion** for Android is **invite-only**. The tester version is no longer published here:
+it is downloaded from **https://dddominion.vercel.app/beta** with the personal invitation code each tester receives
+(`BETA-XXXX-XXXX`). The game asks the same code the first time it opens. The source code of the game is not in this
 repository.
 
-## Install
-
-1. Open the latest **Release** of this page and download the `.apk` file (about 1,3 GB: use Wi-Fi).
-2. On the phone, allow installing apps from this source when Android asks.
-3. Install and open the game. It connects by itself to the server of the beta and creates your guest profile.
-
-The beta builds are development builds, installed by hand: Google Play will come later. The game needs Android
-8.0 or newer and an Internet connection.
+No code? The beta is closed: write to info.domdomdominion@gmail.com.
 
 ## Your data
 
@@ -22,8 +17,8 @@ The beta builds are development builds, installed by hand: Google Play will come
 
 ## In italiano
 
-Qui trovi solo le build di prova di **DomDom Dominion** per Android: il codice del gioco non è in questa repository.
-Apri l'ultima **Release**, scarica il file `.apk` (circa 1,3 GB, meglio con il Wi-Fi), consenti l'installazione quando
-Android lo chiede e apri il gioco: si collega da solo al server della beta e crea il tuo profilo ospite.
+La closed beta di **DomDom Dominion** per Android è **solo su invito**. La versione tester non si scarica più da qui:
+si scarica da **https://dddominion.vercel.app/beta** con il codice di invito personale che ogni tester riceve
+(`BETA-XXXX-XXXX`). Il gioco chiede lo stesso codice alla prima apertura. Il codice del gioco non è in questa repository.
+Non hai un codice? La beta è chiusa: scrivi a info.domdomdominion@gmail.com.
 Privacy e cancellazione dell'account: https://dddominion.vercel.app/privacy e https://dddominion.vercel.app/delete-account.
-Contatti: info.domdomdominion@gmail.com
